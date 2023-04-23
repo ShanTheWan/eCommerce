@@ -7,13 +7,13 @@
 
       <ul class="pv1">
         <% if @product.brand? %>
-        <li class="inline-block"><%= @product.brand %></li>
+        <li class="inline-block pr3"><%= @product.brand %></li>
         <% end %>
 
-        <li class="inline-block pr4"><%= @product.model %></li>
+        <li class="inline-block pr3"><%= @product.model %></li>
 
         <% if @product.condition? %>
-        <li class="inline-block"><%= @product.condition %></li>
+        <li class="inline-block pr3"><%= @product.condition %></li>
         <% end %>
       </ul>
 
@@ -54,7 +54,7 @@
       <div class="bg-white pa4 border-radius-3">
         <h4 class="title is-5 has-text-centered"><%= number_to_currency(@product.price) %></h4>
         <p class="has-text-centered mb4">Sold by <%= @product.user.name %></p>
-        <%= button_to 'Add to cart', '#', class: 'button is-info add-to-cart' %>
+        <%= button_to 'Add to cart', line_items_path(product_id: @product), class: 'button is-info add-to-cart' %>
       </div>
     </div>
   </div>
