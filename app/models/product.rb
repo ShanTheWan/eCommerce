@@ -10,7 +10,7 @@ class Product < ApplicationRecord
     validates :title, length: { maximum: 140, too_long: "%{count} characters is the maximum allowed" }
     validates :price, length: { maximum: 7 }
   
-    BRAND = %w(Apple Samsung Huawei Xiaomi Oppo Sony LG Motorola Nokia Asus Google HTC Lenovo ZTE Alcatel Blackberry Meizu Vodafone)
+    BRAND = %w(Shirt T-Shirt Jeans Shorts Pants Hat Shoes Accessories Other)
     CONDITION = %w(New Excellent Used Poor)
 
     private
