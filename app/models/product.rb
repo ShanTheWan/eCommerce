@@ -11,7 +11,13 @@ class Product < ApplicationRecord
     validates :title, length: { maximum: 140, too_long: "%{count} characters is the maximum allowed" }
     validates :price, length: { maximum: 7 }
   
+<<<<<<< HEAD
    
+=======
+    BRAND = %w(Shirt T-Shirt Jeans Shorts Pants Hat Shoes Accessories Other)
+    CONDITION = %w(New Excellent Used Poor)
+
+>>>>>>> 16493a57203073a68abcefdb9222878c9e1aa940
     private
 
     def not_referenced_by_any_line_item
