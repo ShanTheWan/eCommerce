@@ -1,0 +1,8 @@
+# app/views/admin/import_csv.html.erb
+
+<%= form_tag import_csv_admin_products_path, multipart: true, enctype: 'multipart/form-data' do %>
+  <%= file_field_tag :csv_file %>
+  <%= submit_tag 'Import CSV' %>
+  <a href="/csv_templates/import.csv" download>Download Template CSV</a>
+
+<% end %>

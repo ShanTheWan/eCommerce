@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema[7.0].define(version: 2023_04_23_122253) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_03_220343) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -39,10 +38,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_23_122253) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_admin_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
-=======
-ActiveRecord::Schema[7.0].define(version: 2023_04_23_130720) do
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  end
 
   create_table "carts", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -57,14 +53,24 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_23_130720) do
     t.integer "quantity", default: 1
     t.index ["cart_id"], name: "index_line_items_on_cart_id"
     t.index ["product_id"], name: "index_line_items_on_product_id"
->>>>>>> 00c5836c6a957c51fc12445489fcc8a78b315ef3
+  end
+
+  create_table "product_tags", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "product_tags_products", id: false, force: :cascade do |t|
+    t.bigint "product_tag_id"
+    t.bigint "product_id"
+    t.index ["product_id"], name: "index_product_tags_products_on_product_id"
+    t.index ["product_tag_id", "product_id"], name: "index_product_tags_products_on_product_tag_id_and_product_id"
+    t.index ["product_tag_id"], name: "index_product_tags_products_on_product_tag_id"
   end
 
   create_table "products", force: :cascade do |t|
-    t.string "brand"
-    t.string "model"
     t.text "description"
-    t.string "condition"
     t.string "title"
     t.decimal "price", precision: 5, scale: 2
     t.datetime "created_at", null: false
