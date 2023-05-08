@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_08_154527) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_08_161644) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -169,6 +169,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_08_154527) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "payments", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_payments_on_user_id"
+  end
+
   create_table "product_tags", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -203,6 +210,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_08_154527) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
+    t.string "city"
+    t.string "country"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -215,4 +224,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_08_154527) do
   add_foreign_key "pay_charges", "pay_subscriptions", column: "subscription_id"
   add_foreign_key "pay_payment_methods", "pay_customers", column: "customer_id"
   add_foreign_key "pay_subscriptions", "pay_customers", column: "customer_id"
+  add_foreign_key "payments", "users"
 end

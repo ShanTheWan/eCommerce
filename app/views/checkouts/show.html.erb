@@ -1,0 +1,19 @@
+<% content_for :header do %>
+    <section class="hero is-info">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title">
+            CHECKOUT
+          </h1>
+        </div>
+      </div>
+    </section>
+    <% end %>
+
+<div class="pv4">
+    You can only pay with stripe at the moment. Check out here --> 
+    <%= render partial: 'pay/stripe/checkout_button', locals: {
+        session: @checkout_session,
+        title: "Buy now!",
+     } %>
+</div>
