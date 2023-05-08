@@ -36,8 +36,8 @@
     </div>
 
     <div class="navbar-item">
-      <form action="/products" method="get">
-      <input type="hidden" name="search_param" value="title" />
+      <form action="<%= search_index_path %>" method="get">
+        <input type="hidden" name="search_param" value="title" />
         <div class="field has-addons">
           <div class="control">
             <input class="input" type="text" placeholder="Search" name="query">
