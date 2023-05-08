@@ -1,0 +1,19 @@
+<% content_for :header do %>
+    <section class="hero is-info">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title">
+            Your order has been placed!
+          </h1>
+        </div>
+      </div>
+    </section>
+    <% end %>
+
+    
+<div class="pv4">
+  Thank you for your purchase! </br>You will receive an email confirmation in a short notice.
+  <div class="pv4">
+    <%= link_to 'Keep shopping!', products_path, class: 'button is-info' %>
+  </div>
+</div>
