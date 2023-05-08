@@ -1,3 +1,5 @@
+<% if @products.any? %>
+
 <% content_for :header do %>
     <section class="hero is-info">
       <div class="hero-body">
@@ -22,12 +24,9 @@
 <% end %>
         </div>
   
-  
       <div class="pa3">
   
-        <h3 class="fw7 f4 title"><%= link_to product.title, product %></h3>
-  
-       
+        <h3 class="fw7 f4 title"><%= link_to product.title, product %></h3>    
   
         <p class="f3 fw6 has-text-right pt2 price"><%= number_to_currency(product.price) %></p>
         <% if product_author(product) %>
@@ -39,3 +38,16 @@
     </div>
     <% end %>
   </div>
+<% else %>
+<% content_for :header do %>
+    <section class="hero is-info">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title">
+            No results found
+          </h1>
+        </div>
+      </div>
+    </section>
+    <% end %>
+<% end %>
