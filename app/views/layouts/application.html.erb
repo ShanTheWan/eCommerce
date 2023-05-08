@@ -8,6 +8,7 @@
     <%= stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' %>
     <%= stylesheet_link_tag 'example', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application' %>
+    
   </head>
 
   <body class="<%= yield (:body_class) %>">
@@ -34,10 +35,11 @@
     </div>
 
     <div class="navbar-item">
-      <form action="/search" method="get">
+      <form action="/products" method="get">
+      <input type="hidden" name="search_param" value="title" />
         <div class="field has-addons">
           <div class="control">
-            <input class="input" type="text" placeholder="Search" name="q">
+            <input class="input" type="text" placeholder="Search" name="query">
           </div>
           <div class="control">
             <button type="submit" class="button is-dark">
