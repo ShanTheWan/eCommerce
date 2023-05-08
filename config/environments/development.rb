@@ -60,7 +60,19 @@ Rails.application.configure do
   config.assets.quiet = true
 
   #For devise
+  config.action_mailer.perform_deliveries = true
+
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+  address: "mail.cthulhu.social",
+  port: 587,
+  domain: "cthulhu.social",
+  user_name: "no-reply@cthulhu.socialS",
+  password: "mailerthing",
+  authentication: "plain",
+  enable_starttls_auto: true
+}
 
   # Raises error for missing translations.
   # config.i18n.raise_on_missing_translations = true
