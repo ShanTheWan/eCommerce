@@ -89,6 +89,7 @@ Rails.application.configure do
   end
 
   config.action_mailer.delivery_method = :smtp
+  config.action_mailer.default_url_options = { host: "pojegajsek.herokuapp.com" } 
   config.action_mailer.smtp_settings = {
   address: "mail.cthulhu.social",
   port: 587,
