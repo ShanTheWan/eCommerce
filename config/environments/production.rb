@@ -97,7 +97,8 @@ Rails.application.configure do
   user_name: "neupasodpisat@timandrejc.eu",
   password: "Strongerpassword123",
   authentication: "plain",
-  enable_starttls_auto: true
+  enable_starttls_auto: true,
+  tls: true
 }
 
   # Do not dump schema after migrations.
