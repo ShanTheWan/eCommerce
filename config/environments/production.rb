@@ -92,7 +92,7 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: "pojegajsekprojekt.herokuapp.com" }
   config.action_mailer.smtp_settings = {
   address: "mail.timandrejc.eu",
-  port: 587,
+  port: 465,
   domain: "timandrejc.eu",
   user_name: "neupasodpisat@timandrejc.eu",
   password: "Strongerpassword123",
