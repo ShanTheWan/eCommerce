@@ -89,13 +89,13 @@ Rails.application.configure do
   end
 
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.default_url_options = { host: "cthulhu.social" }
+  config.action_mailer.default_url_options = { host: "pojegajsekprojekt.herokuapp.com" }
   config.action_mailer.smtp_settings = {
-  address: "mail.cthulhu.social",
+  address: "mail.timandrejc.eu",
   port: 587,
-  domain: "cthulhu.social",
-  user_name: "no-reply@cthulhu.social",
-  password: "mailerthing",
+  domain: "timandrejc.eu",
+  user_name: "neupasodpisat@timandrejc.eu",
+  password: "Strongerpassword123",
   authentication: "plain",
   enable_starttls_auto: true
 }
